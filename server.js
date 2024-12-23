@@ -10,7 +10,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use((req, res, next) => {
   if (req.url.endsWith(".js")) {
     res.setHeader("Content-Type", "text/javascript");
-    res.setHeader("Cache-Control", "public, max-age=31536000"); // Cache for 1 year
   }
   next();
 });
